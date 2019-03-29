@@ -4,9 +4,9 @@ function Character(props){
     return(
         <div>
             
-           {props.characterData.name} <hr/>
-           {props.characterData.height} <br/>
-           {props.characterData.mass} <br/>
+            {props.characterData.name} <hr/>
+            {props.characterData.height} <br/>
+            {props.characterData.mass} <br/>
             
         </div>
     )

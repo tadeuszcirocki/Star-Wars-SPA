@@ -30,6 +30,7 @@ class App extends Component {
   }
 
   handleChange(event){
+    console.log(event.target.value)
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -37,7 +38,8 @@ class App extends Component {
 
   handleSubmit(event){
     event.preventDefault()
-    const specificCharacterData = this.state.allCharacterData.find(obj => obj.name===this.state.userInput)
+    const specificCharacterData = this.state.allCharacterData.find
+      (obj => obj.name.toUpperCase()===this.state.userInput.toUpperCase())
     this.setState({
       characterData: specificCharacterData
     })
@@ -48,7 +50,7 @@ class App extends Component {
       <div>
         <Header/>
         <SearchBar userInput={this.state.userInput} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
-        <Character characterData={this.state.characterData}/>
+        {this.state.characterData === undefined ? "No such character" : <Character characterData={this.state.characterData}/>}
       </div>
     );
   }
