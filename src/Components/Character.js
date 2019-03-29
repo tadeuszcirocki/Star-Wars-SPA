@@ -1,13 +1,12 @@
 import React from 'react'
-import CharacterAttribute from './CharacterAttribute';
 
 function Character(props){
     return(
         <div>
-            <CharacterAttribute/>
-            <CharacterAttribute/>
-            <CharacterAttribute/>
-
+            
+           {props.characterData.name} <hr/>
+           {props.characterData.height} <br/>
+           {props.characterData.mass} <br/>
             
         </div>
     )
